@@ -1,4 +1,4 @@
-# Linked Statistical Data (LSD) Sparklines
+# Linked Statistical Data (LSD) Sparkline
 
 There is a live instance of this tooling at [http://stats.270a.info/sparkline](http://stats.270a.info/sparkline)
 
