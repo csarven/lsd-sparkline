@@ -24,7 +24,7 @@
 
                 Sparkline: '',
 
-                DotSize: 3
+                DotSize: '1'
             },
 
             U: {
@@ -137,13 +137,19 @@ ORDER BY ?refPeriod";
 
                 drawSparkline: function(results) {
                     var data = $.map(results, function(n) { return n.obsValue.value; }),
-                        range = 96,
                         max = Math.max.apply(null, data),
                         min = Math.min.apply(null, data);
 
-                    var parts = $.map(data, function (num) { return (100 * (num - min) / (max - min)) || 0; }),
-                        div = 100 / parts.length,
-                        x1 = 0, y1 = 0, x2 = div / 2, y2 = 96 - parts[0];
+                    var new_max = 98;
+                    var new_min = 0;
+                    var range = new_max - new_min;
+
+                    var parts = $.map(data, function (v) {
+                        return (new_max - new_min) / (max - min) * (v - min) + new_min || 0;
+                    });
+
+                    var x1 = 0, y1 = 0, x2 = div / 2, y2 = range - parts[0];
+                    var div = 100 / parts.length;
 
                     var lines = '';
                     for (var i=0; i < parts.length; i++) {
@@ -161,15 +167,15 @@ ORDER BY ?refPeriod";
                         //Last data item
                         if(i+1 === parts.length) {
                             lines += '<circle class="point"' +
-                                ' cx="' + x2 + '%"' +
-                                ' cy="' + y2 + '%"' +
-                                ' r="' + LSD.C.DotSize + '%"' +
+                                ' cx="' + (x2 - LSD.C.DotSize) + '%"' +
+                                ' cy="' + (y2 + 2 * LSD.C.DotSize) + '%"' +
+                                ' r="' + LSD.C.DotSize + '"' +
                                 '/>';
                         }
                     }
 
                     document.documentElement.setAttribute('class', '');
-                    $('svg').append('<g xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><a target="_blank" xlink:href="' + LSD.C.Input['qb:DataSet'] + '">' + lines + '</a></g>');
+                    $('svg').append('<g width="" height="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><a target="_blank" xlink:href="' + LSD.C.Input['qb:DataSet'] + '">' + lines + '</a></g>');
                 }
             }
         };
@@ -185,12 +191,12 @@ ORDER BY ?refPeriod";
             background:url("http://270a.info/theme/default/images/icons/icon_processing.gif") no-repeat 45% 0;
         }
         line {
-            stroke: rgba(0,0,0,0.5);
-            stroke-width: 1;
+            stroke: #000000;
+            stroke-width: 1px;
         }
         circle.point {
-            stroke: rgba(255,0,0,0.2);
-            fill: rgba(255,0,0,1);
+            stroke: #ff0000;
+            fill: #ff0000;
         }
     /*]]>*/--></style>
 </svg>
