@@ -191,7 +191,7 @@ ORDER BY ?refPeriod";
             background:url("http://270a.info/theme/default/images/icons/icon_processing.gif") no-repeat 45% 0;
         }
         line {
-            stroke: #000000;
+            stroke: #333333;
             stroke-width: 1px;
         }
         circle.point {
