@@ -6,7 +6,7 @@
     xmlns:ev="http://www.w3.org/2001/xml-events"
     width="100%" height="100%">
     <title></title>
-    <script type="text/javascript" xlink:href="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" xlink:href="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" xlink:href="http://stats.270a.info/js/rdf_store_min.js"></script>
     <script type="text/javascript"><!--//--><![CDATA[//><!--
         var LSD = {
