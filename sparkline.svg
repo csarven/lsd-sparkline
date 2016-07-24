@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg height="100%" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# xsd: http://www.w3.org/2001/XMLSchema# qb: http://purl.org/linked-data/cube# prov: http://www.w3.org/ns/prov# schema: https://schema.org/" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <style type="text/css">/*<![CDATA[*/line { stroke:#000; stroke-width:1px; } circle { stroke:#f00; fill:#f00; }/*]]>*/</style>
+<svg class="processing" height="100%" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# xsd: http://www.w3.org/2001/XMLSchema# qb: http://purl.org/linked-data/cube# prov: http://www.w3.org/ns/prov# schema: https://schema.org/" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style type="text/css">/*<![CDATA[*/line { stroke:#000; stroke-width:1px; } circle { stroke:#f00; fill:#f00; } .processing { background:url("http://270a.info/theme/default/images/icons/icon_processing.gif") no-repeat 45% 0; }/*]]>*/</style>
     <script type="text/javascript" xlink:href="https://localhost:8443/dokieli/scripts/simplerdf.js"></script>
     <script type="text/javascript" xlink:href="https://localhost:8443/dokieli/scripts/do.js"></script>
     <script type="text/javascript"><!--//--><![CDATA[//><!--
@@ -11,7 +11,7 @@
                 },
 
                 getData: function() {
-                    document.documentElement.setAttribute('class', '.fa.fa-spinner.fa-pulse');
+//                    document.documentElement.setAttribute('class', 'processing');
                     //TODO: Use qb:Slice if no sparqlEndpoint
                     var sparqlEndpoint = DO.U.decodeString(DO.U.urlParam('void:sparqlEndpoint'));
                     var dataset = DO.U.decodeString(DO.U.urlParam('qb:DataSet'));
@@ -99,8 +99,8 @@
                             };
 
                             var sparkline = DO.U.drawSparklineGraph(list, options);
-                            document.documentElement.setAttribute('class', '');
                             document.querySelector('svg').insertAdjacentHTML('beforeend', sparkline);
+                            document.documentElement.removeAttribute('class');
                        });
                 }
             }
