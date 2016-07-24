@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg class="processing" height="100%" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# xsd: http://www.w3.org/2001/XMLSchema# qb: http://purl.org/linked-data/cube# prov: http://www.w3.org/ns/prov# schema: https://schema.org/" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style type="text/css">/*<![CDATA[*/line { stroke:#000; stroke-width:1px; } circle { stroke:#f00; fill:#f00; } .processing { background:url("http://270a.info/theme/default/images/icons/icon_processing.gif") no-repeat 45% 0; }/*]]>*/</style>
-    <script type="text/javascript" xlink:href="https://dokie.li/dokieli/scripts/simplerdf.js"></script>
-    <script type="text/javascript" xlink:href="https://dokie.li/dokieli/scripts/do.js"></script>
+    <script type="text/javascript" xlink:href="https://dokie.li/scripts/simplerdf.js"></script>
+    <script type="text/javascript" xlink:href="https://dokie.li/scripts/do.js"></script>
     <script type="text/javascript"><!--//--><![CDATA[//><!--
         var S = {
             U: {
