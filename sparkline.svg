@@ -51,7 +51,7 @@
 //console.log(sparqlEndpoint);
 //console.log(dataset);
 //console.log(refArea);
-                    var queryURL = DO.U.createSPARQLQueryURLGetObservationsWithDimension(sparqlEndpoint, dataset, paramDimension);
+                    var queryURL = DO.U.SPARQLQueryURL.getObservationsWithDimension(sparqlEndpoint, dataset, paramDimension);
 //console.log(queryURL);
                     var pIRI = queryURL;
                     if (document.location.protocol == 'https:' && pIRI.slice(0, 5).toLowerCase() == 'http:') {
